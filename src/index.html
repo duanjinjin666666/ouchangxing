@@ -37,11 +37,11 @@
   </div>
   <script src="/assets/app.js"></script>
   <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
-  <script src="http://res.qukaihei.com/fastclick.js"></script>
+  <script src="http://apps.bdimg.com/libs/fastclick/1.0.0/fastclick.min.js"></script>
   <script type="text/javascript">
     window.jsKey = "JSKEY";
     window.versionKey = "VERSIONKEY";
-    var versionUrl = "http://m.qukaihei.com/api/get_version";
+    var versionUrl = "http://m.nordeu.cn/api/get_version";
 
     window.addEventListener('load', function () {
       FastClick.attach(document.body);
@@ -91,7 +91,7 @@
           version = 0;
         }
         if (json.version > version) {
-          var url = "http://res.qukaihei.com/" + json.version + "/app.js?r=" + Math.random();
+          var url = "/assets/app.js?r=" + Math.random();
           syncJs(url, function () {
             window.localStorage[versionKey] = json.version;
           });

@@ -33,7 +33,7 @@ export default class DetailView extends React.Component {
             line_type: "加载中...",
             tag: [],
             title: "加载中...",
-            price: "加载中...",
+            price: "加载中...", 
             firstHeight: this.props.firstHeight
         }
         this.swiper;
@@ -77,7 +77,7 @@ export default class DetailView extends React.Component {
                     line_type: item.line_type,
                     tag: item.tag,
                     product_type: item.product_type,
-                    price: item.price
+                    price: item.price, 
                 }, () => {
                     let h = $(".swiper-container").height() + $(".top-car").height() + $(".content-car").height();
                     this.setState({
@@ -159,7 +159,7 @@ export default class DetailView extends React.Component {
                         </div>
                     </div>
                     <div className="info-item" >
-                        <Description id={this.state.id} />
+                        <Description id={this.state.id}/>
                     </div>
                 </GoodsInfo>
                 <div className="bottomRow">

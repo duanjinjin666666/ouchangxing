@@ -31,7 +31,6 @@ export default class Description extends React.Component {
     }
 
     componentDidMount() {
-        console.log(111)
         this.geiInfo();
     }
 
@@ -39,7 +38,9 @@ export default class Description extends React.Component {
         let self = this;
         net.get("/api/line_info", { line_id: this.state.id }).then(data => {
             let item = data.info;
-            console.log(item)
+            this.setState({
+                stroke: item.stroke || []
+            });
         });
     }
 
@@ -51,45 +52,33 @@ export default class Description extends React.Component {
                         <div className="cost-des">
                             <div className="hd onepix">
                                 <img src={`${icon_schedule}`} width="18" />
-                                <span>12日行程</span>
+                                <span>{this.state.stroke.length}日行程</span>
                             </div>
                             <div className="bd">
                                 <ul className="schedule-list">
-                                    <li>
-                                        <div className="day-des">
-                                            <h2>第1天<span className="city">北京<i className="icon-plane"></i>丹麦</span></h2>
-                                            <p>瑞士国家旅游局、法国旅游发展署、意大利国家旅游局推荐产品此线路为2015年途牛旅游网倾心打造牛人专线系列王牌产品！跟团游欧洲，选择此线路，最高性价此线路精选欧洲专业资深导游，郑重承诺杜绝使用出现在黑名单中的导游，服务更加人性化。</p>
-                                        </div>
-                                        <div className="day-meal">
-                                            <h5 className="meal">餐饮</h5>
-                                            <p>早餐：自理</p>
-                                            <p>午餐：自理</p>
-                                            <p>晚餐：XXXXX</p>
-                                        </div>
-                                        <div className="day-hotel">
-                                            <h5 className="hotel">住宿</h5>
-                                            <p>丹麦XXXXXX酒店</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="day-des">
-                                            <h2>第2天<span className="city">丹麦<i className="icon-bus"></i>挪威</span></h2>
-                                            <p>瑞士国家旅游局、法国旅游发展署、意大利国家旅游局推荐产品此线路为2015年途牛旅游网倾心打造牛人专线系列王牌产品！跟团游欧洲，选择此线路，最高性价此线路精选欧洲专业资深导游，郑重承诺杜绝使用出现在黑名单中的导游，服务更加人性化。</p>
-                                            <div className="tour-pic">
-                                                <img src="http://nordeu.cn/images/img-trip-ship-1.jpg" />
-                                            </div>
-                                        </div>
-                                        <div className="day-meal">
-                                            <h5 className="meal">餐饮</h5>
-                                            <p>早餐：自理</p>
-                                            <p>午餐：自理</p>
-                                            <p>晚餐：XXXXX</p>
-                                        </div>
-                                        <div className="day-hotel">
-                                            <h5 className="hotel">住宿</h5>
-                                            <p>丹麦XXXXXX酒店</p>
-                                        </div>
-                                    </li>
+                                    {
+                                        this.state.stroke.length == 0 && <span>暂无行程安排</span>
+                                    }
+                                    {
+                                        this.state.stroke.map((item, index) => (
+                                            <li key={index}>
+                                                <div className="day-des">
+                                                    <h2>第{item.day}天<span className="city">{item.begin_land}<i className="icon-plane"></i>{item.end_land}</span></h2>
+                                                    <p>{item.detail}</p>
+                                                </div>
+                                                <div className="day-meal">
+                                                    <h5 className="meal">餐饮</h5>
+                                                    <p>早餐：{item.breakfast}</p>
+                                                    <p>午餐：{item.lunch}</p>
+                                                    <p>晚餐：{item.dinner}</p>
+                                                </div>
+                                                <div className="day-hotel">
+                                                    <h5 className="hotel">住宿</h5>
+                                                    <p>{item.hotel}</p>
+                                                </div>
+                                            </li>
+                                        ))
+                                    }
                                 </ul>
                             </div>
                             <div className="s-notice mark-red"><span>以上行程可能因为天气或其他原因有变动，具体行程以出团通知书为准</span></div>
