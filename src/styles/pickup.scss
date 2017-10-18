@@ -1,0 +1,44 @@
+@import "variable";
+.pickup{
+    .am-tabs-bar{
+        margin-bottom:rem(30px);
+    }
+    .topbar{
+        background-color: #46a5d7;
+        color:$w-color;
+        padding:0 rem(30px);
+        align-items: center;
+        justify-content: center;
+        height: rem(100px);
+        .am-flexbox-item:last-child{
+            text-align: right;
+        }
+    }
+    .topic img{
+        width: 100%;
+        display: block;
+    }
+    .am-list-item.am-input-item{
+        height: rem(100px);
+    }
+    .booking{
+        display: flex;
+        margin:rem(80px) rem(40px) 0;
+        background-color: #f97e58;
+        height: rem(100px);
+        color: $w-color;
+        font-size: 18px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.ico-search{
+    @include icon-meth('icon_search.png',rem(59px),rem(52px));
+}
+.ico-hotline{
+    @include icon-meth('icon_hotline.png',rem(54px),rem(52px));
+}
+.ico-user{
+    @include icon-meth('icon_user.png',rem(48px),rem(52px));
+    margin-left: rem(30px);
+}

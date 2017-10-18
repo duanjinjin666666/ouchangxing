@@ -1,0 +1,60 @@
+@import "variable";
+
+// body{
+//     background: #fff;
+// }
+.pay-box{
+    padding: 0 rem(30px);
+    text-align: center;
+    .icon{
+        padding-top:rem(90px);
+        padding-bottom:rem(50px);
+        position: relative;
+        img{
+            width:rem(154px);
+            padding-bottom:rem(40px);
+        }
+        h3{
+            font-weight: 400;
+            font-size: 20px;
+            color: rgb(60, 60, 60);
+        }
+        h5{
+            font-weight: 400;
+            font-size: 20px;
+            color: rgb(60, 60, 60);
+            padding-top: rem(25px);
+        }
+    }
+    .txt{
+        padding: rem(30px) 0;
+        font-size: 15px;
+        color: rgb(60, 60, 60);
+    }
+    .back{
+        padding-top:rem(200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: rem(2px);
+            font-size: 16px;
+            height: rem(90px);
+            width:rem(300px);
+        }
+        .btn-back{
+            border-color: rgb(60, 60, 60);
+            color: rgb(60, 60, 60);
+            margin-right: rem(20px);
+        }
+        .btn-view{
+            border-color: rgb(249, 126, 88);
+            color: rgb(249, 126, 88);
+        }
+    }
+}

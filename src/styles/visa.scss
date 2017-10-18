@@ -1,0 +1,108 @@
+@import "variable";
+.top-pd{
+    padding: rem(120px) 0 rem(90px);
+}
+.am-list-body{
+    border:0 !important;
+}
+.visa{
+    .topbar{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: #46a5d7;
+        color:$w-color;
+        padding:0 rem(30px);
+        align-items: center;
+        justify-content: center;
+        height: rem(100px);
+        .am-flexbox-item:last-child{
+            text-align: right;
+        }
+    }
+    .list-visa{
+        padding: 0 rem(28px);
+        overflow: hidden;
+        li{
+            width: 50%;
+            list-style: none;
+            float: left;
+            box-sizing: border-box;
+            margin-bottom: rem(30px);
+            &:nth-child(odd){
+                padding-right: rem(10px);
+            }
+            &:nth-child(even){
+                padding-left: rem(10px);
+            }
+        }
+        .pic{
+            width:100%;
+            display: block;
+        }
+        h5{
+            background: $w-color;
+            padding: rem(10px) rem(16px);
+            font-size: 17px;
+            color: rgb(60, 60, 60);
+        }
+        .price{
+            background: $w-color;
+            padding: 0 rem(14px) rem(10px);
+            color: rgb(249, 126, 88);
+            i{
+                font-size:12px;
+                font-style: normal;
+            }
+            span{
+                font-size: 20px;
+            }
+        }
+        .am-list-body:after{
+            display: none;
+        }
+    }
+    .content{
+        .bd{
+            background: $w-color;
+            padding: rem(25px) rem(30px); 
+            margin-bottom: rem(20px); 
+        }
+        h5.title{
+            font-size: 15px;
+            line-height: rem(38px);
+            overflow: hidden;
+            margin-bottom: rem(15px);
+            &:before{
+                content: '';
+                display: block;
+                float: left;
+                width: rem(6px);
+                height: rem(38px);
+                background: $blue-color;
+                margin-right: rem(16px);
+                vertical-align: middle;
+            }
+        }
+    }
+    .tour{
+        margin-bottom: rem(30px);
+        span{
+            float: right;
+            line-height: 34px;
+            font-size: 10px;
+        }
+    }
+    .am-list-item .am-list-line .am-list-extra{
+        color: #969696 !important;
+    }
+    .form-ensure{
+        .am-list-item .am-list-line-multiple{
+            padding:0;
+        }
+        .am-list-item .am-input-label.am-input-label-4{
+            width:auto;
+        }
+    }
+}

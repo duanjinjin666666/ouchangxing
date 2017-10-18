@@ -1,0 +1,109 @@
+@import "variable";
+
+.line .am-tabs-bar .am-tabs-tab{
+  border-bottom:0;
+}
+.line .am-refresh-control-ptr{
+  margin-top:-0.52rem;
+}
+.am-popup-content{
+  .am-list-header{
+      padding:0;
+      .am-flexbox-item:nth-child(2){
+          text-align: right;
+      }
+  }
+}
+.pop-bd-list{
+    padding-left: 0;
+    min-height: rem(80px);
+    .am-list-line{
+        padding-right: 0;
+        min-height: rem(80px);
+        .am-list-content{
+            text-align: center;
+        }
+    }
+    
+    &:first-child .am-list-content{
+        color:#96bb3b;
+    }
+}
+.pop-hd-handle{
+  padding: 0.3rem 0.3rem 0.18rem 0.3rem;
+  background-color: #636363;
+  color:$w-color;
+  font-size: rem(30px);
+  .am-flexbox-item:nth-child(2) {
+    text-align: right;
+  }
+}
+
+.popular-list{
+  .hd{
+    padding:rem(35px) 0 rem(26px);
+    text-align: center;
+    h4{
+      font-size: rem(40px);
+      line-height:rem(40px);
+      color:#3c3c3c;
+    }
+    p{
+      font-size: rem(24px);
+      line-height:rem(24px);
+      color:$grey-color;
+      margin-top:rem(16px);
+    }
+  }
+  .con{
+    padding:rem(25px) rem(30px) rem(40px);
+    position: relative;
+    .title{
+      font-size: rem(38px);
+      line-height:rem(38px);
+      color:#3c3c3c;
+      flex: 1;
+    }
+    p{
+      font-size: rem(24px);
+      line-height:rem(24px);
+      color:$grey-color;
+      padding-top: rem(16px);
+    }
+    .btn-label{
+      padding-top:rem(25px);
+      .btn-base{
+        @extend %btn-s;
+        color: $grey-color;
+        margin-right: rem(10px);
+        padding:0 rem(10px);
+      }
+    }
+    .guess-price{
+      width:rem(160px);
+      flex: inherit;
+    }
+    .text-price{      
+      color:#f97e58;
+      margin:0;
+      >i{
+        font-family: Arial;
+        font-size: rem(24px);
+          font-style: normal;
+      }
+      .num{
+        font-size: rem(40px);
+      }
+      .u-start{
+        font-size: rem(24px);
+      }
+    }
+  }
+}
+.imgfull{
+  width: 100%;
+  display: block;
+}
+.col{
+  flex: 1;
+}

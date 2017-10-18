@@ -1,0 +1,80 @@
+@import "variable";
+.guest{
+    .hd{
+        background-color: #e7e7e7;
+        font-size: 18px;
+        line-height: rem(100px);
+        padding:0 rem(30px);
+        .done{
+            color:$blue-color;
+            text-align: right;
+        }
+        .cancle{
+            color: #505050;
+        }
+    }
+    .item{
+        .label{
+            margin-right: rem(10px);
+        }
+        .am-input-item{
+            padding:0 .2rem;
+            input{
+                width:rem(200px);
+                font-size: 14px;
+            }
+        }
+        &.am-flexbox-item{
+            height: 0.9rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0  .3rem;
+            &:after {
+                display: block;
+                position: absolute;
+                content: '';
+                left: 0.3rem;
+                bottom: 0;
+                right: .3rem;
+                border-bottom: 1px solid #ddd;
+            }
+            &:last-child:after{
+                display: none;
+            }
+        }
+
+    }
+    .my-picker >div:nth-child(2){
+        flex: 1;
+    }
+    .my-picker .am-list-extra{
+        flex: 1;
+    }
+    .my-radio {
+        margin-right: rem(50px);
+        .am-radio {
+            padding: rem(3px);
+            border: 1px solid #969696;
+            border-radius: 50%;
+            margin-right: rem(20px);
+        }
+    }
+    
+        .sp-line{
+            position: relative;
+            display: block;
+            height: rem(60px);
+            margin-right: rem(20px);
+            &:after{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 1px;
+                content: '';
+                transform: scaleY(.5);
+                border-left: 1px solid #e7e7e7;
+            }
+        }
+}

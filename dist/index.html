@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>欧畅行</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    .box {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #333;
+    }
+
+    #loading {
+      color: #fff
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="box">
+      <div id="loading">
+        资源加载中
+      </div>
+    </div>
+  </div>
+  <script src="/assets/app.js"></script>
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+  <script src="http://res.qukaihei.com/fastclick.js"></script>
+  <script type="text/javascript">
+    window.jsKey = "JSKEY";
+    window.versionKey = "VERSIONKEY";
+    var versionUrl = "http://m.qukaihei.com/api/get_version";
+
+    window.addEventListener('load', function () {
+      FastClick.attach(document.body);
+      // checkVersion();
+    }, false);
+
+    function getJs() {
+      window.console.log = function () { };
+      var js = window.localStorage[jsKey];
+      if (js) {
+        addJsToDoc(js);
+      }
+    }
+
+    function ajaxGet(url, success) {
+      var timer = 0;
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.send(null);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          window.clearTimeout(timer);
+          success && success(xhr.responseText);
+        }
+      };
+      timer = setTimeout(function () {
+        xhr.abort();
+        alert("请求超时");
+      }, 20000);
+    }
+
+    function syncJs(url, fn) {
+      ajaxGet(url, function (data) {
+        fn && fn(data);
+        window.localStorage[jsKey] = data;
+        addJsToDoc(data);
+      });
+    }
+
+    function checkVersion() {
+      ajaxGet(versionUrl, function (data) {
+        var json = JSON.parse(data);
+        var version = window.localStorage[versionKey];
+        if (version) {
+          version = parseInt(version);
+        } else {
+          version = 0;
+        }
+        if (json.version > version) {
+          var url = "http://res.qukaihei.com/" + json.version + "/app.js?r=" + Math.random();
+          syncJs(url, function () {
+            window.localStorage[versionKey] = json.version;
+          });
+        } else {
+          getJs();
+        }
+      });
+    }
+
+    function addJsToDoc(js) {
+      var head = document.querySelector("head");
+      var scriptTag = document.createElement("script");
+      scriptTag.type = "text/javascript";
+      scriptTag.innerHTML = js;
+      head.appendChild(scriptTag);
+    }
+  </script>
+
+</body>
+
+</html>

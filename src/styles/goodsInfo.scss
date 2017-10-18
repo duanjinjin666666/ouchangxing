@@ -1,0 +1,32 @@
+@import "variable";
+
+#topTips{
+	position: absolute;
+	top: rem(-98px);
+	width: 100%;
+	height: rem(98px);
+	line-height: rem(98px);
+	text-align: center;
+}
+
+#bottomTips{
+	position: absolute;
+	height: rem(98px);
+	line-height: rem(98px);
+	bottom: rem(-98px);
+	width: 100%;
+	text-align: center;
+}
+
+
+.goodsInfo{
+    position: absolute;
+	z-index: 1;
+    top: 0;
+	bottom: rem(110px);
+	left: 0;
+	right:0; 
+	background: #e7e7e7;
+	overflow: hidden;
+}
+

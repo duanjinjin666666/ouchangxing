@@ -1,0 +1,344 @@
+@import "variable";
+.cost-des {
+  background: #fff;
+  margin-top: rem(20px);
+  position: relative;
+  .hd {
+    display: flex;
+    height: rem(88px);
+    align-items: center;
+    padding: 0 rem(30px);
+    position: relative;
+    > img {
+      margin-right: rem(10px);
+    }
+    > span {
+      flex: 1;
+      color: $blue-color;
+      font-size: 16px;
+    }
+  }
+  .bd {
+    padding: rem(10px) rem(30px);
+    .title {
+      color: #a4ca47;
+      font-size: 16px;
+      font-weight: 400;
+      display: flex;
+      height: rem(70px);
+      align-items: center;
+    }
+    .num-list {
+      padding-left: rem(36px);
+      li {
+        list-style: decimal;
+        line-height: rem(44px);
+        font-size: 13px;
+        color: #6f6f6f;
+      }
+    }
+    .part {
+      padding-bottom: rem(30px);
+      margin-bottom: rem(20px);
+      position: relative;
+    }
+    p {
+      line-height: rem(44px);
+      font-size: 13px;
+      color: #6f6f6f;
+    }
+  }
+}
+
+.my-carousel {
+  //   height: rem(344px)
+}
+
+.my-carousel a img {
+  width: 100%;
+  vertical-align: top;
+  height: rem(344px);
+}
+
+.info-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  .title-box {
+    margin-bottom: rem(30px);
+    .title {
+      font-size: 19px;
+      line-height: rem(50);
+      display: block;
+    }
+  }
+  .btn-label {
+    padding-top: rem(30px);
+    margin-bottom: rem(10px);
+    .btn-base {
+      @extend %btn-s;
+      color: $grey-color;
+      margin-right: rem(10px);
+      padding: 0 rem(10px);
+    }
+    .goodsNum {
+      position: absolute;
+      right: rem(30px);
+      color: #6d6d6d;
+      font-size: 14px;
+      line-height: rem(32px);
+      height: rem(32px);
+    }
+  }
+}
+
+.bottomRow {
+  width: 100%;
+  height: rem(110px);
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  .bottom-col {
+    width: rem(138);
+    height: rem(110px);
+    border-right: 1px solid #c9c9c9;
+    border-top: 1px solid #c9c9c9;
+    .bicon {
+      width: rem(50px);
+      height: rem(50px);
+    }
+    .biconText {
+      font-size: 11px;
+      color: #3c3c3c;
+      margin-top: rem(10px);
+    }
+  }
+  .yubtn {
+    height: rem(110px);
+    background: #f97e58;
+    span {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+}
+
+.contact-hotline {
+  padding: rem(40px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  p {
+    font-size: 12px;
+    line-height: 26px;
+    color: rgb(111, 111, 111);
+    padding-bottom: rem(15px);
+  }
+  h3 {
+    font-size: 19px;
+    line-height: 26px;
+    font-weight: 400;
+    color: rgb(70, 164, 214);
+    padding-bottom: rem(30px);
+  }
+  button {
+    font-size: 18px;
+    height: rem(100px);
+    margin-bottom: rem(30px);
+    flex: 1;
+    border: 0;
+    &.btn-call {
+      background-color: #f97e58;
+      color: $w-color;
+    }
+    &.btn-cancel {
+      color: #747474;
+      background: #ddd;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.text-price {
+  color: #f97e58;
+  margin: 0;
+  > i {
+    font-family: Arial;
+    font-size: rem(24px);
+    font-style: normal;
+  }
+  .num {
+    font-size: rem(40px);
+  }
+  .u-start {
+    font-size: rem(24px);
+  }
+}
+
+.tips {
+  line-height: rem(30);
+  text-align: center;
+}
+
+.top-car {
+  padding: rem(30px);
+  margin-bottom: rem(20px);
+  background: #fff;
+}
+
+.content-car {
+  background: #fff;
+  .desTitle {
+    height: rem(88px);
+    border-bottom: 1px solid #c9c9c9;
+    border-left: rem(6px) solid #46a4d6;
+    line-height: rem(88px);
+    font-size: 19px;
+    padding-left: rem(24px);
+  }
+  .des-info {
+    padding: rem(30px);
+    min-height: rem(460px);
+  }
+}
+
+// 详情页行程
+.schedule-list {
+  list-style: none;
+  padding: rem(30px) 0;
+  li {
+    position: relative;
+    margin-left: rem(15px);
+    margin-bottom: rem(30px);
+    padding-left: rem(15px);
+    border-bottom: 1px solid #c9c9c9;
+    &:before {
+      content: '';
+      border-left: 1px dotted #A4CA47;
+      position: absolute;
+      top: rem(28px);
+      bottom: rem(40px);
+      left: rem(15px);
+    }
+    &:last-child {
+      border: 0;
+    }
+  }
+  .day-des {
+    margin-left: rem(30px);
+    margin-bottom: rem(30px);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: rem(6px);
+      top: rem(10px);
+      width: rem(12px);
+      height: rem(12px);
+      border: rem(3px) solid #A4CA47;
+      border-radius: rem(12px);
+    }
+    h2 {
+      color: #A4CA47;
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: rem(26px);
+      .city {
+        margin-left: rem(30px);
+        font-size: 13px;
+        color: #3c3c3c;
+      }
+    }
+    p {
+      color: #6f6f6f;
+      font-size: 13px;
+    }
+    .tour-pic {
+      margin-top: rem(20px);
+      overflow: hidden;
+      img {
+        width: 45%;
+        float: left;
+        margin-right: rem(10px);
+      }
+    }
+  }
+  .day-meal {
+    margin-left: rem(30px);
+    margin-bottom: rem(30px);
+    .meal:before {
+      content: '';
+      @include icon-meth( 'icon_meal.png', rem(32px), rem(30px));
+      vertical-align: middle;
+      margin-right: rem(8px);
+    }
+  }
+  .day-hotel {
+    margin-left: rem(30px);
+    margin-bottom: rem(20px);
+    .hotel:before {
+      content: '';
+      @include icon-meth( 'icon_hotel.png', rem(32px), rem(40px));
+      vertical-align: middle;
+      margin-right: rem(8px);
+    }
+  }
+  .hotel, .meal {
+    color: #3C3C3C;
+    font-size: 13px;
+    padding-bottom: rem(15px);
+  }
+}
+
+.icon-plane {
+  @include icon-meth( 'icon_plane.png', rem(39px), rem(19px));
+  margin: 0 rem(8px);
+}
+
+.icon-ship {
+  @include icon-meth( 'icon_ship.png', rem(32px), rem(32px));
+  margin: 0 rem(8px);
+}
+
+.icon-train {
+  @include icon-meth( 'icon_train.png', rem(22px), rem(31px));
+  margin: 0 rem(8px);
+}
+
+.icon-bus {
+  @include icon-meth( 'icon_bus.png', rem(33px), rem(21px));
+  margin: 0 rem(8px);
+}
+
+.s-notice {
+  border-top: rem(20px) solid #e7e7e7;
+  font-size: 12px;
+  line-height: 18px;
+  padding: rem(20px) rem(38px);
+  &:before {
+    content: "*";
+    color: #f00;
+    display: block;
+    float: left;
+  }
+  > span {
+    display: block;
+    margin-left: rem(25px);
+  }
+}
+
+.gotop {
+  @include icon-meth( 'icon_top.png', rem(98px), rem(98px));
+  position: fixed;
+  bottom: rem(30px);
+  right: rem(30px);
+}
+
+.goodsItems {
+  width: 100%;
+}

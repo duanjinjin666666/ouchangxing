@@ -1,0 +1,56 @@
+@import "variable";
+
+body{
+    background-color: #e7e7e7;
+}
+.ucenter{
+    .tx{
+        @include icon-meth('bg_ucenter.jpg',100%,rem(362px));
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: rem(50px);
+    }
+    .pic{
+        background: #fff;
+        padding:rem(3px);
+        width: rem(175px);
+        height: rem(175px);
+        border-radius: 50%;
+        margin: 0 auto rem(30px);
+        position: relative;
+        >img{
+            width: rem(175px);
+            height: rem(175px);
+        border-radius: 50%;
+        }
+        &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            right: rem(-50px);
+            top: rem(80px);
+            width: 0.3rem;
+            height: 0.3rem;
+            // background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D'16'%20height%3D'27'%20v…9.533036%2C70.040985%20Z'%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            visibility: hidden;
+        }
+    }
+    .txt{
+        color: $w-color;
+        font-size: 15px;
+    }
+    .am-list-body{
+        background: none;
+    }
+    .am-list-body, .am-list-body:after, .am-list-line:after{
+        border:0 !important;
+    }
+    .am-list-item{
+        margin-bottom: rem(20px);
+    }
+}

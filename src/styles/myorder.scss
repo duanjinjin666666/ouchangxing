@@ -1,0 +1,64 @@
+@import "variable";
+
+body{
+    background: $w-color;
+}
+.white-bg{
+    background: $w-color;
+}
+.item{
+    margin:0 rem(30px);
+    padding:rem(30px) 0;
+    position: relative;
+    &.onepix:after{
+        border-color: #dedede;
+    }
+    .pic{
+        width: rem(188px);
+        height: rem(141px);
+        margin-right: rem(26px);
+    }
+    .detail{
+        height: rem(141px);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-content: space-around;
+    }
+    .info{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content:space-between;
+        .rmb{
+            flex: 1;
+            color: rgb(249, 126, 88);
+            font-size: 20px;
+            span{
+                font-size: 12px;
+            }
+        }
+        .time{
+            font-size: 12px;
+            color: rgb(163, 163, 163);
+        }
+        .btn-pay{
+            font-size: 10px;
+            color: rgb(249, 126, 88);
+            border-width: 1px;
+            border-color: rgb(249, 126, 88);
+            border-style: solid;
+            border-radius: rem(3px);
+            width:rem(120px);
+            text-align: center;
+        }
+        .collect{
+            @include icon-meth('icon_star_on.png',rem(40px),rem(37px));
+        }
+    }
+    .title{
+        font-size: 19px;
+        color: rgb(60, 60, 60);
+        flex: 1;
+    }
+}

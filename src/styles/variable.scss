@@ -1,0 +1,77 @@
+$def-color:#000;
+$grey-color:#a3a3a3;
+$blue-color:#47a5d7;
+$w-color:#fff;
+$imgbase:'../images/';
+$line-color:#939393;
+$relative-font-size: 32px !default;
+
+h1,h2,h3,h4,h5,h6,i,input,legend,li,ol,p,pre,span,td,textarea,th,ul{margin:0;padding:0}
+html{
+  font-family: 'Tahoma','microsoft yahei','Simsun';
+}
+::-webkit-scrollbar{width:0px}
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+@function rem($value) {
+  $v: strip-unit($value);
+  $relative: strip-unit($relative-font-size);
+  @return $v/$relative/3.1 + rem;
+}
+
+@mixin border-radius($px: 2px){
+  -webkit-border-radius: $px;
+  -moz-border-radius: $px;
+  -ms-border-radius: $px;
+  border-radius: $px;;
+}
+@mixin btn-background($btn-background){
+  @extend %btn-s;
+  background-color: $btn-background;
+  &:hover{
+    background-color: darken($btn-background,10%);
+  }
+}
+
+@mixin icon-meth($url,$w,$h){
+  display: inline-block;
+  width:$w;
+  height:$h;
+  background:url("#{$imgbase}/#{$url}") no-repeat;
+  background-size: 100%;
+}
+@mixin before($url,$x,$y,$w,$h){
+  display: inline-block;
+  content: '';
+  vertical-align: middle;
+  width:$w;
+  height:$h;
+  background: url("#{$imgbase}/#{$url}.png") no-repeat $x $y;
+}
+
+%btn-s{
+  font-size: rem(20px);
+  display: inline-block;
+  line-height:rem(32px);
+  height:rem(32px);
+  text-align: center;
+  @include border-radius(3px);
+  border:1px solid $line-color;
+}
+.c-blue{
+  color:$blue-color !important;
+}
+.onepix{    
+    &:after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        border-bottom: 1px solid $line-color;
+    }
+}
