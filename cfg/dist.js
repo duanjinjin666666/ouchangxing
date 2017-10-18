@@ -12,7 +12,7 @@ let BowerWebpackPlugin = require('bower-webpack-plugin');
 let config = Object.assign({}, baseConfig, {
   entry: path.join(__dirname, '../src/index'),
   cache: false,
-  devtool: 'hidden-source-map',
+  devtool: 'sourcemap',
   plugins: [
     new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
