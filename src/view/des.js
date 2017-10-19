@@ -16,16 +16,16 @@ export default class Description extends React.Component {
         this.state = {
             id: this.props.id,
             line_num: "2000101",
-            title: "德国慕尼黑足球之旅",
+            title: "加载中...",
             product_type: "europe",
-            introduction: "德国慕尼黑足球之旅，拜仁慕尼黑你懂得",
-            details: "看球赛啊 还用说？",
-            country: "德国",
+            introduction: "加载中...",
+            details: "加载中...",
+            country: "加载中...",
             tag: [],
             img: "http://www.qukaihei.com/app/wx_img_1481448893106102.jpg",
-            price: "19999.00",
+            price: "加载中...",
             days: "6",
-            line_type: "城市观光",
+            line_type: "加载中...",
             stroke: []
         }
     }

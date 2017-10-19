@@ -113,6 +113,7 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            bannerlist: [],
             list: (
                 <Flex.Item>
                     <Flex justify="center" align="center">
@@ -125,6 +126,14 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.renderList();
+        net.get("/api/banner").then(data => {
+            console.log("banner", data);
+            if (data.status_code == 10000) {
+                this.setState({
+                    bannerlist: data.info || []
+                });
+            }
+        });
     }
 
 
@@ -153,7 +162,14 @@ export default class Home extends React.Component {
         return (
             <div className="home">
                 {Topbar}
-                {Slider}
+                <Carousel className="my-carousel" style={{ minHeight: 215, background: "#ccc" }} dots={true} autoplay={false} infinite>
+                    {
+                        this.state.bannerlist.map((item, index) =>
+                            <a href="#" key={index}>
+                                <img src={item.images} />
+                            </a>)
+                    }
+                </Carousel>
                 {Column}
                 {column2}
                 <div className="cheap-trip col-space">

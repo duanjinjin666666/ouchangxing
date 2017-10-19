@@ -26,14 +26,14 @@ export default class DetailView extends React.Component {
         this.state = {
             infoHeight: 0,
             id: this.props.params.id,
-            details: "加载中...",
+            details: [],
             product_type: "",
             introduction: "加载中...",
             line_num: "加载中...",
             line_type: "加载中...",
             tag: [],
             title: "加载中...",
-            price: "加载中...", 
+            price: "加载中...",
             firstHeight: this.props.firstHeight
         }
         this.swiper;
@@ -69,15 +69,16 @@ export default class DetailView extends React.Component {
         net.get("/api/line_info", { line_id: this.state.id }).then(data => {
             let item = data.info;
             if (data.status_code == 10000) {
+                let lines = (item.details || "").split("\r\n");
                 self.setState({
                     title: item.title,
                     introduction: item.introduction,
-                    details: item.details,
+                    details: lines,
                     line_num: item.line_num,
                     line_type: item.line_type,
                     tag: item.tag,
                     product_type: item.product_type,
-                    price: item.price, 
+                    price: item.price,
                 }, () => {
                     let h = $(".swiper-container").height() + $(".top-car").height() + $(".content-car").height();
                     this.setState({
@@ -118,6 +119,7 @@ export default class DetailView extends React.Component {
     }
 
     render() {
+
         return (
             <div className="info-box">
                 <GoodsInfo className="goodsInfo" height={this.state.infoHeight} firstHeight={this.state.firstHeight} >
@@ -154,12 +156,14 @@ export default class DetailView extends React.Component {
                                 产品特色
                             </div>
                             <div className="des-info">
-                                {this.state.details}
+                                {this.state.details.map((item, index) => (
+                                    <div style={{ paddingTop: 5, paddingBottom: 5 }} key={index}>{item}</div>
+                                ))}
                             </div>
                         </div>
                     </div>
                     <div className="info-item" >
-                        <Description id={this.state.id}/>
+                        <Description id={this.state.id} />
                     </div>
                 </GoodsInfo>
                 <div className="bottomRow">
